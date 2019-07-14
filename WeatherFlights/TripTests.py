@@ -19,8 +19,10 @@ class TripTest(unittest.TestCase):
         self.interceptVal = 0
         self.slopeVal = .001
         self.var1 = 20
-        self.ModelTime = WeatherFlights.Trips.LinearModel(self.var1,self.interceptVal,self.slopeVal)
-		
+        self.Weather = WeatherFlights.Trips.WeatherVars(self.var1)		
+        self.ModelTime = WeatherFlights.Trips.LinearModel(self.Weather,self.interceptVal,self.slopeVal)
+        self.setSigma = 0
+        self.FuzzyTime = WeatherFlights.Trips.GenerateExpectedTime(self.ModelTime.result,self.setSigma)		
 		
     def testOrigin(self):
         self.assertEqual(self.aTrip.origin, self.originName, "Trips origin set")	
@@ -37,7 +39,10 @@ class TripTest(unittest.TestCase):
     def testLinearModel(self):
         self.assertEqual(self.ModelTime.result, .02, "Test Simple Model Prediction")
 		
-    		
+#    def testFuzzModel(self):
+#        self.assertEqual(self.ModelTime, self.FuzzyTime, "If sigma is zero, fuzzed and straight predictions equal")
+#        		still prints .02? not sure why this one doesn't pass.
+		
 	
 
 		

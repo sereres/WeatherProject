@@ -1,3 +1,5 @@
+import random
+
 class Trip(object):
 
     def __init__(self, origin, destination):
@@ -25,15 +27,23 @@ class FlightTime(object):
 	
 class LinearModel(object):
 
-    def __init__(self, var1, intercept, slope):
-        self.var1 = var1
+    def __init__(self, inputvars, intercept, slope):
+        #expects weathervars object, two parameters for linear model, returns predicted flight diff time
+        self.var1 = inputvars
         self.intercept = intercept
         self.slope = slope
-        self.result = intercept + slope * var1
+        self.result = intercept + slope * inputvars.var1
 
-#class GenerateExpectedTime(object):
+class GenerateExpectedTime(object):
 
-#    def __init__(self, inputvars, model)
+    def __init__(self, prediction, sigma):
+        #expects weathervars object, model with 2 parameters, and a variable for adding random noise
+        self.prediction = prediction
+        self.sigma = sigma
+        self.result = self.prediction + random.gauss(0, self.sigma)
+        #print(self.result)
+		
+
 	
 	
 	
