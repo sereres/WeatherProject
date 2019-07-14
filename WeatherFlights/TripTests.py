@@ -12,12 +12,12 @@ class TripTest(unittest.TestCase):
                             "Trip must have some length")
 		
     def setTrip(self):
-        self.origin = "Chicago"
-        self.destination = "Atlanta"
-        self.Trip = WeatherFlights.Trips.Trip(self.origin, self.destination)
+        self.originName = "Chicago"
+        self.destinationName = "Atlanta"
+        self.aTrip = WeatherFlights.Trips.Trip(self.originName, self.destinationName)
 		
     def testOrigin(self):
-        self.assertEqual(WeatherFlights.Trips.Trip.origin, "Chicago", "Trips start from Chicago")	
+        self.assertEqual(self.aTrip.origin, self.DestinationName, "Trips start from Chicago")	
 #        self.Trip = WeatherFlights.Trip.Path(self.origin, self.destination)
 	
 if __name__ == "__main__":
