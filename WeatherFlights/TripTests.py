@@ -11,7 +11,7 @@ class TripTest(unittest.TestCase):
         self.assertNotEqual(self.TripOrigin, self.TripDestination, 
                             "Trip must have some length")
 		
-    def setTrip(self):
+    def setUp(self):
         self.originName = "Chicago"
         self.destinationName = "Atlanta"
         self.aTrip = WeatherFlights.Trips.Trip(self.originName, self.destinationName)
