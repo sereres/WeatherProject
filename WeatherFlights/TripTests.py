@@ -1,13 +1,15 @@
 import unittest
 #import WeatherFlights.Trip
 
-class Tests(unittest.TestCase):
-    def TestTests(self):
+class TripTest(unittest.TestCase):
+    def testTests(self):
         pass
 		
-#    def TestTrip(self):
-#        self.origin = "Chicago"
-#        self.destination = "Atlanta"
+    def testTrip(self):
+        self.origin = "Chicago"
+        self.destination = "Atlanta"
+        self.assertNotEqual(self.origin, self.destination, 
+                            "Trip must have some length")
 		
 #        self.Trip = WeatherFlights.Trip.Path(self.origin, self.destination)
 	
