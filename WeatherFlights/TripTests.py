@@ -6,9 +6,9 @@ class TripTest(unittest.TestCase):
         pass
 		
     def testTrip(self):
-        self.origin = "Chicago"
-        self.destination = "Atlanta"
-        self.assertNotEqual(self.origin, self.destination, 
+        self.TripOrigin = "Chicago"
+        self.TripDestination = "Atlanta"
+        self.assertNotEqual(self.TripOrigin, self.TripDestination, 
                             "Trip must have some length")
 		
     def setTrip(self):
@@ -17,8 +17,7 @@ class TripTest(unittest.TestCase):
         self.aTrip = WeatherFlights.Trips.Trip(self.originName, self.destinationName)
 		
     def testOrigin(self):
-        self.assertEqual(self.aTrip.origin, self.DestinationName, "Trips start from Chicago")	
-#        self.Trip = WeatherFlights.Trip.Path(self.origin, self.destination)
+        self.assertEqual(self.aTrip.origin, self.originName, "Trips origin set")	
 	
 if __name__ == "__main__":
     unittest.main()
