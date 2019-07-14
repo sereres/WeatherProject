@@ -16,6 +16,11 @@ class TripTest(unittest.TestCase):
         self.aCity = WeatherFlights.Trips.City(self.originName, self.originLatt, self.originLong)
         self.aCity2 = WeatherFlights.Trips.City(self.destinationName, self.destinationLatt, self.destinationLong)		
         self.aCityTrip = WeatherFlights.Trips.Trip(self.aCity, self.aCity2)
+        self.interceptVal = 0
+        self.slopeVal = .001
+        self.var1 = 20
+        self.ModelTime = WeatherFlights.Trips.LinearModel(self.var1,self.interceptVal,self.slopeVal)
+		
 		
     def testOrigin(self):
         self.assertEqual(self.aTrip.origin, self.originName, "Trips origin set")	
@@ -28,6 +33,11 @@ class TripTest(unittest.TestCase):
 		
     def testCityTrip(self):
         self.assertEqual(self.aCityTrip.origin.name, self.aCity.name, "test trips between cities")
+		
+    def testLinearModel(self):
+        self.assertEqual(self.ModelTime.result, .02, "Test Simple Model Prediction")
+		
+    		
 	
 
 		
