@@ -40,7 +40,7 @@ class GenerateExpectedTime(object):
         #expects weathervars object, model with 2 parameters, and a variable for adding random noise
         self.prediction = prediction
         self.sigma = sigma
-        self.result = self.prediction + random.gauss(0, self.sigma)
+        self.result = 180*self.prediction + random.gauss(0, self.sigma)
         #print(self.result)
 		
 
